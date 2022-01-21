@@ -41,17 +41,27 @@ class ComputeEmployeeWage:
         print("Employee Wage Per Month {}".format(self.emp_wage_per_month))
 
 
+
+
+
+
+
 if __name__ == "__main__":
     try:
-        company1 = ComputeEmployeeWage("Bridgelabz", 24, 24, 24)
-        company2 = ComputeEmployeeWage("Alas", 12, 22, 209)
-        company1.calculate_employee_wage_for_company()
-        company2.calculate_employee_wage_for_company()
+        company_name = input("enter the company name")
+        emp_rate=int(input("Enter Employee rate"))
+        num_of_days=int(input("Enter the Number of Days"))
+        max_hours=int(input("Enter the Max Hours"))
+        company=ComputeEmployeeWage(company_name,emp_rate,num_of_days,max_hours)
+        company.calculate_employee_wage_for_company()
+        list_of_company = list()
+        list_of_company.append(company)
+        for item in list_of_company:
+            print(item.display())
+
+
     except Exception as e:
         print(e)
         logging.error(e)
-    list_of_company = list()
-    list_of_company.append(company1)
-    list_of_company.append(company2)
-    for item in list_of_company:
-        print(item.display())
+
+
