@@ -11,7 +11,7 @@ class ComputeEmployeeWage:
     emp_wage_per_month = 0
 
     def __init__(self, company, emp_rate, num_of_days, max_hours):
-        self.company = str(company)
+        self.company = company
         self.emp_rate = emp_rate
         self.num_of_days = num_of_days
         self.max_hours = max_hours
@@ -35,24 +35,21 @@ class ComputeEmployeeWage:
             print("Employee Wage per Day {}".format(emp_wage_per_day))
 
         print("Employee Wage Per Month {}".format(self.emp_wage_per_month))
+        return self.emp_wage_per_month
 
     def display(self):
         print("Company Name= {}".format(self.company))
         print("Employee Wage Per Month {}".format(self.emp_wage_per_month))
-
-
-
-
-
+        return self.company
 
 
 if __name__ == "__main__":
     try:
         company_name = input("enter the company name")
-        emp_rate=int(input("Enter Employee rate"))
-        num_of_days=int(input("Enter the Number of Days"))
-        max_hours=int(input("Enter the Max Hours"))
-        company=ComputeEmployeeWage(company_name,emp_rate,num_of_days,max_hours)
+        emp_rate = int(input("Enter Employee rate"))
+        num_of_days = int(input("Enter the Number of Days"))
+        max_hours = int(input("Enter the Max Hours"))
+        company = ComputeEmployeeWage(company_name, emp_rate, num_of_days, max_hours)
         company.calculate_employee_wage_for_company()
         list_of_company = list()
         list_of_company.append(company)
@@ -63,5 +60,3 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
         logging.error(e)
-
-
